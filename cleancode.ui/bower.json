@@ -2,5 +2,9 @@
   "name": "ASP.NET",
   "private": true,
   "dependencies": {
+    "jquery": "~2.1.4",
+    "underscore": "~1.8.3",
+    "bootstrap": "~3.3.6",
+    "bootswatch": "~3.3.6+1"
   }
 }
