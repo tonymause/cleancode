@@ -1,0 +1,1 @@
+dnx ef dbcontext scaffold "Filename=/Users/tonymause/Work/repos/cleancode/cleancode.ui/world.db" EntityFramework.SQLite --outputDir Models

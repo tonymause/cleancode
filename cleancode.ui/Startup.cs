@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using cleancode.ui.Models;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Http;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace cleancode.ui
@@ -16,6 +12,9 @@ namespace cleancode.ui
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddEntityFramework()
+                .AddSqlite()
+                .AddDbContext<WorldContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

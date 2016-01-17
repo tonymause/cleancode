@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Sqlite (Xerial) - world.db" uuid="b4285c61-1778-4f42-886f-4a743bb8fad7">
+    <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="City" schema="" catalog="" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="Name" sqlType="CHAR(35)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="CountryCode" sqlType="CHAR(3)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="District" sqlType="CHAR(20)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="Population" sqlType="INT(11)" precision="0" scale="-1" nullable="false" jdbcType="4" def="JzAn"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_City_1" columns="CountryCode" ref-table="Country" ref-schema="" ref-catalog="" ref-columns="Code" update-rule="3" delete-rule="3" deferrability="1"/>
+    </table>
+    <table name="ContinentTable" schema="" catalog="" type="TABLE">
+      <column name="Continent" sqlType="CHAR(13)" precision="0" scale="-1" nullable="false" jdbcType="12" def="J0FzaWEn"/>
+      <column name="ContinentId" sqlType="INT(11)" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="Country" schema="" catalog="" type="TABLE">
+      <column name="Code" sqlType="CHAR(3)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="Name" sqlType="CHAR(52)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="Continent" sqlType="CHAR(15)" precision="0" scale="-1" nullable="false" jdbcType="12" def="J0FzaWEn"/>
+      <column name="Region" sqlType="CHAR(26)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="SurfaceArea" sqlType="FLOAT(10,2)" precision="0" scale="-1" nullable="false" jdbcType="6" def="JzAuMDAn"/>
+      <column name="IndepYear" sqlType="SMALLINT(6)" precision="0" scale="-1" nullable="true" jdbcType="4" def="TlVMTA=="/>
+      <column name="Population" sqlType="INT(11)" precision="0" scale="-1" nullable="false" jdbcType="4" def="JzAn"/>
+      <column name="LifeExpectancy" sqlType="FLOAT(3,1)" precision="0" scale="-1" nullable="true" jdbcType="6" def="TlVMTA=="/>
+      <column name="GNP" sqlType="FLOAT(10,2)" precision="0" scale="-1" nullable="true" jdbcType="6" def="TlVMTA=="/>
+      <column name="GNPOld" sqlType="FLOAT(10,2)" precision="0" scale="-1" nullable="true" jdbcType="6" def="TlVMTA=="/>
+      <column name="LocalName" sqlType="CHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="GovernmentForm" sqlType="CHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="HeadOfState" sqlType="CHAR(60)" precision="0" scale="-1" nullable="true" jdbcType="12" def="J05VTEwn"/>
+      <column name="Capital" sqlType="INT(11)" precision="0" scale="-1" nullable="true" jdbcType="4" def="TlVMTA=="/>
+      <column name="Code2" sqlType="CHAR(2)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key columns="code"/>
+      <foreign-key name="#FAKE_Country_1" columns="Continent" ref-table="ContinentTable" ref-schema="" ref-catalog="" ref-columns="Continent" update-rule="3" delete-rule="3" deferrability="1"/>
+    </table>
+    <table name="CountryLanguage" schema="" catalog="" type="TABLE">
+      <column name="CountryCode" sqlType="CHAR(3)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="Language" sqlType="CHAR(30)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="IsOfficial" sqlType="CHAR(1)" precision="0" scale="-1" nullable="false" jdbcType="12" def="J0Yn"/>
+      <column name="Percentage" sqlType="FLOAT(4,1)" precision="0" scale="-1" nullable="false" jdbcType="6" def="JzAuMCc="/>
+      <primary-key columns="`countrycode`,`language`"/>
+      <foreign-key name="#FAKE_CountryLanguage_1" columns="CountryCode" ref-table="Country" ref-schema="" ref-catalog="" ref-columns="Code" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_CountryLanguage_2" columns="IsOfficial" ref-table="TrueFalseTable" ref-schema="" ref-catalog="" ref-columns="Value" update-rule="3" delete-rule="3" deferrability="1"/>
+    </table>
+    <table name="Stop" schema="" catalog="" type="TABLE">
+      <column name="Id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="Arrival" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="Latitude" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="Longitude" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="Name" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="Order" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="TripId" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_Stop_1" columns="TripId" ref-table="Trip" ref-schema="" ref-catalog="" ref-columns="Id" update-rule="3" delete-rule="1" deferrability="1"/>
+    </table>
+    <table name="Trip" schema="" catalog="" type="TABLE">
+      <column name="Id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="Created" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="Name" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="UserName" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="TrueFalseTable" schema="" catalog="" type="TABLE">
+      <column name="Value" sqlType="CHAR(1)" precision="0" scale="-1" nullable="false" jdbcType="12" def="J0Yn"/>
+    </table>
+    <table name="__EFMigrationsHistory" schema="" catalog="" type="TABLE">
+      <column name="MigrationId" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="ProductVersion" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="migrationid"/>
+    </table>
+    <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
+      <column name="name" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="seq" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+    </table>
+  </data-source>
+</component>

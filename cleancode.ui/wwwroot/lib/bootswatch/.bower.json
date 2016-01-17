@@ -31,22 +31,22 @@
     "*/index.html"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.6"
   },
   "devDependencies": {
-    "bootstrap-sass-official": "~3.3.5",
+    "bootstrap-sass-official": "~3.3.6",
     "font-awesome": "~4.0.0",
     "html5shiv": "~3.7.0",
     "respond": "~1.4.2"
   },
-  "version": "3.3.5+1",
-  "_release": "3.3.5+1",
+  "version": "3.3.6+1",
+  "_release": "3.3.6+1",
   "_resolution": {
     "type": "version",
-    "tag": "v3.3.5+1",
-    "commit": "f6c0658770d4a002adbecc95a2f1fd0c8534a7ed"
+    "tag": "v3.3.6+1",
+    "commit": "7820b744da10884c2613de7a905ab2d93028661d"
   },
   "_source": "git://github.com/thomaspark/bootswatch.git",
-  "_target": "3.3.5+1",
+  "_target": "3.3.6+1",
   "_originalSource": "bootswatch"
 }
